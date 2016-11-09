@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   end
 
   def home
+    @posts = Post.all
   end
 
   def profile
@@ -15,6 +16,13 @@ class PagesController < ApplicationController
     else
       redirect_to root_path, :notice => "User does not exist"
     end
+    
+    @users = User.all
+    @posts = Post.all
+    
+    #also use this line to filter posts from the controller instead of the view
+    # @posts = Post.all.where("user_id = ?", User.find_by_username(params[:id]).id)
+    
   end
 
   def explore

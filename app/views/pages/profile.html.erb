@@ -20,19 +20,38 @@
     </div>
     
     <div class="col-md-5">
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <p>Your Tweets</p>
-          </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Your Tweets</h3>
         </div>
+      </div>
+        <% for p in @posts %>
+          <% if (@users.find_by_id(p.user_id)).username==current_user.username %>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p><%= p.content%></p>
+                <i>Posted at <%= p.created_at%></i>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+        
     </div>
     
     <div class="col-md-3">
+      
         <div class="panel panel-default">
           <div class="panel-body">
             <p>Recommended Users</p>
           </div>
         </div>
+        
+        <div class="panel panel-default">
+            <div class="panel-body">
+            <p>Trending</p>
+            </div>
+        </div>
+
     </div>
     
 </div>
@@ -40,10 +59,6 @@
 
 <div class="row">
     <div class="col-xs-3 col-xs-offset-8">
-        <div class="panel panel-default">
-            <div class="panel-body">
-            <p>Trending</p>
-            </div>
-        </div>
+        
     </div>
 </div>

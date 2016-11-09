@@ -12,10 +12,18 @@
     
     <div class="col-md-5">
         <div class="panel panel-default">
-          <div class="panel-body">
-            <p>Your Feed</p>
+          <div class="panel-heading">
+            <h3 class="panel-title">Recent Tweets</h3>
           </div>
         </div>
+        <% for p in @posts %>      
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <p><%= p.content%></p>
+              <i>Posted at <%= p.created_at%></i>
+            </div>
+          </div>
+        <% end %>
     </div>
     
     <div class="col-md-3">
@@ -24,19 +32,16 @@
             <p>Stats</p>
           </div>
         </div>
-    </div>
-    
-</div>
-
-
-<div class="row">
-    <div class="col-xs-3">
+        
         <div class="panel panel-default">
             <div class="panel-body">
             <p>Trending</p>
             </div>
         </div>
+        
     </div>
+    
 </div>
+
 
 
