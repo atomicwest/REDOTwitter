@@ -11,7 +11,8 @@ Rails.application.routes.draw do
 
   # get 'pages/explore' => 'pages#explore'
 
-  get 'profile' => 'pages#profile'
+  # get 'profile' => 'pages#profile'
+  get '/user/:id' => 'pages#profile'   #not working
 
   get 'index' => 'pages#index'
 
