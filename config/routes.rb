@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   # get 'profile' => 'pages#profile'
   get '/user/:id' => 'pages#profile'   #not working
+  # get '/user/:id' => 'pages#profile', as: :profile    #try different route
 
   get 'index' => 'pages#index'
 
