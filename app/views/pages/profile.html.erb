@@ -20,20 +20,35 @@
     </div>
     
     <div class="col-md-5">
+      
+      <div class="panel panel-default">
+        <div class="panel panel-body">
+          <%= render '/functions/post_tweet' %>
+          
+        </div>
+      </div>
+      
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">Your Tweets</h3>
         </div>
       </div>
-        <% for p in @posts %>
-          <% if (@users.find_by_id(p.user_id)).username==current_user.username %>
+        
+        <% if @userpost.length==0%>
+          <div class="panel panel-default">
+            <div class="panel panel-body">
+              <p>You have no tweets</p>    
+            </div>
+          </div>
+        <%end%>
+        
+        <% for p in @userpost %>
             <div class="panel panel-default">
               <div class="panel-body">
                 <p><%= p.content%></p>
                 <i>Posted at <%= p.created_at%></i>
               </div>
             </div>
-          <% end %>
         <% end %>
         
     </div>

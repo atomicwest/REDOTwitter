@@ -20,8 +20,9 @@ class PagesController < ApplicationController
     @users = User.all
     @posts = Post.all
     
-    #also use this line to filter posts from the controller instead of the view
-    # @posts = Post.all.where("user_id = ?", User.find_by_username(params[:id]).id)
+    @userpost = Post.all.where("user_id = ?", User.find_by_username(params[:id]).id)
+    
+    @newpost = Post.new
     
   end
 

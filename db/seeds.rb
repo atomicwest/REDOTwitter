@@ -10,7 +10,7 @@ JEDI = %w(ObiWan MaceWindu Yoda AdiGalia Atris Nomi Luke MaraJade)
 
 JEDI.each do |jedi|
   # user = User.create!(username: jedi, email: "#{jedi}@jediorder.org", password: "#{jedi}1138")
-  user = User.create!(username: jedi, password: "#{jedi}1138")
+  user = User.create!(username: "Master #{jedi}", email: "#{jedi}@jediorder.org", password: "#{jedi}1138")
 end
 
 POSTS = [
